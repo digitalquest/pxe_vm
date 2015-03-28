@@ -1,0 +1,1 @@
+sudo iptables-restore < /home/emeka/Downloads/iptables.sav

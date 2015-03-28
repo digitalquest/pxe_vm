@@ -1,0 +1,1 @@
+sudo service isc-dhcp-server restart && sudo service nfs-kernel-server restart && sudo iptables-restore < /home/emeka/Downloads/iptables.sav

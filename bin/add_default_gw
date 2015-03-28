@@ -1,0 +1,2 @@
+sudo route add default gw 192.168.5.254 wlan0
+sudo route del default gw 10.0.5.1

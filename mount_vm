@@ -1,0 +1,3 @@
+sudo mount /dev/sdb6 /home/kabapc/mnt
+sudo mount -o bind /home/kabapc/mnt/srv/install /srv/install
+sudo mount -o bind /home/kabapc/mnt/tftpboot /var/lib/tftpboot
