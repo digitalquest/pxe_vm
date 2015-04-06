@@ -1,0 +1,110 @@
+DEFAULT vesamenu.c32 
+TIMEOUT 600
+ONTIMEOUT BootLocal
+PROMPT 0
+MENU INCLUDE pxelinux.cfg/pxe.conf
+NOESCAPE 1
+LABEL BootLocal
+        localboot 0
+        TEXT HELP
+        Boot to local hard disk
+        ENDTEXT
+MENU BEGIN Ubuntu
+MENU TITLE Ubuntu 
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE ubuntu/ubuntu.menu
+MENU END
+MENU BEGIN Redhat Enterprise Linux
+MENU TITLE Redhat Enterprise Linux
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE rhel/rhel.menu
+MENU END
+MENU BEGIN CentOS
+MENU TITLE CentOS 
+        LABEL Previous
+MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE centos/centos.menu
+MENU END
+MENU BEGIN Fedora
+MENU TITLE Fedora 
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE fedora/fedora.menu
+MENU END
+MENU BEGIN openSUSE
+MENU TITLE openSUSE 
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE opensuse/opensuse.menu
+MENU END
+MENU BEGIN openFiler Storage Server
+MENU TITLE openFiler Storage Server 
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE openfiler/openfiler.menu
+MENU END
+MENU BEGIN VMware 
+MENU TITLE VMware 
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE vmware/vmware.menu
+MENU END
+MENU BEGIN Tools and Utilities
+MENU TITLE Tools and Utilities
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE utilities/utilities.menu
+MENU END
+MENU BEGIN DOS Based
+MENU TITLE DOS Based
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE dos/dos.menu
+MENU END

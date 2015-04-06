@@ -1,0 +1,139 @@
+default vesamenu.c32
+#Menu Background splash.png
+Menu Title Boot Menu
+# Ubuntu
+LABEL Ubuntu
+MENU LABEL Ubuntu
+KERNEL vesamenu.c32
+APPEND pxelinux.cfg/ubuntu
+#
+# Debian
+LABEL Debian
+MENU LABEL Debian
+KERNEL vesamenu.c32
+APPEND pxelinux.cfg/debian
+#
+# Slackware
+LABEL Slackware
+MENU LABEL Slackware
+KERNEL vesamenu.c32
+APPEND pxelinux.cfg/slackware
+#
+# Fedora
+LABEL Fedora (18)
+MENU LABEL Fedora (18)
+KERNEL fedora/18/i386/vmlinuz
+APPEND initrd=fedora/18/i386/initrd.img
+#
+# CentOS
+LABEL CentOS (6.4)
+MENU LABEL CentOS (6.4)
+KERNEL centos/6.4/i386/vmlinuz
+APPEND initrd=centos/6.4/i386/initrd.img
+#
+# Mandriva
+LABEL Mandriva (2010.2)
+MENU LABEL Mandriva (2010.2)
+KERNEL mandriva/2010.2/i386/vmlinuz
+APPEND  initrd=mandriva/2010.2/i386/all.rdz vga=788 splash=silent automatic=method:http,network:dhcp,server:www.gtlib.gatech.edu,directory:/pub/mandrake/official/2010.0/i586
+#
+# Suse
+LABEL Suse (12.3)
+MENU LABEL Suse (12.3)
+KERNEL suse/12.3/i386/linux
+APPEND initrd=suse/12.3/i386/initrd splash=silent showopts install=http://download.opensuse.org/distribution/12.3/repo/oss/
+#
+# Hardware Detection Tool 
+LABEL Hardware Detection Tool
+MENU LABEL Hardware Detection Tool
+KERNEL memdisk
+APPEND initrd=hdt/hdt.img
+#
+MENU SEPARATOR
+# DBAN
+label DBAN
+MENU LABEL DBAN
+kernel utilities/dban/2.2.7/i586/dban.bzi
+append nuke="dwipe --method dodshort --autonuke" silent floppy=0,16,cmos
+TEXT HELP
+Warning - This will erase your hard drice
+ENDTEXT
+#
+#--Debian wheezy
+label debian wheezy
+MENU LABEL debian wheezy
+kernel debian/wheezy/i386/linux
+append desktop=lxde vga=normal initrd=debian/wheezy/i386/initrd.gz -- quiet
+TEXT HELP
+Install Debian Wheezy with LXDE desktop
+ENDTEXT
+#
+#-- lubuntu 13.04 nfs
+LABEL lubuntu 13.04
+MENU LABEL lubuntu 13.04
+KERNEL lubuntu/13.04/i386/vmlinuz
+APPEND root=/dev/nfs boot=casper netboot=nfs nfsroot=192.168.5.1:/srv/install/lubuntu/13.04 initrd=lubuntu/13.04/i386/initrd.lz quiet splash --
+TEXT HELP
+Lubuntu 13.04 from local server via nfs
+ENDTEXT
+#
+# Boot plop boot manager from NFS - ISO
+
+label ploplinux-nfs-iso
+menu label Plop Linux - NFS ISO
+kernel ploplinux/syslinux/kernel/bzImage
+append initrd=ploplinux/syslinux/kernel/initramfs.gz vga=1 nfsmount=192.168.5.1:/srv/install/tftpboot/ploplinux iso_filename=ploplinux.iso
+#
+label ploplinuxfb-nfs-iso
+menu label Plop Linux framebuffer mode - NFS ISO
+kernel ploplinux/syslinux/kernel/bzImage
+append initrd=ploplinux/syslinux/kernel/initramfs.gz vga=0x317 nfsmount=192.168.5.1:/srv/install/tftpboot/ploplinux iso_filename=ploplinux.iso
+#--
+LABEL zorin
+MENU LABEL Zorin OS
+kernel zorin/casper/vmlinuz
+append initrd=/PinguyOS/casper/initrd.gz boot=casper netboot=nfs nfsroot=192.168.5.1:/srv/instal/zorin --
+#
+label opensuse
+MENU LABEL opensuse
+KERNEL opensuse/linux
+APPEND initrd=opensuse/initrd install=nfs://192.168.5.1/srv/install/opensuse splash=silent ramdisk_size=65535 vga=normal barrier=off
+TEXT HELP
+opensuse version ?
+ENDTEXT
+#--
+# Vector Linux 7
+label vectorlinux
+MENU LABEL Vector Linux
+kernel vectorlinux/sata
+append initrd=vectorlinux/init.lz vga=normal load_ramdisk=1 prompt_ramdisk=0 rw root=/dev/ram
+TEXT HELP
+Vector Linux 7 - won't boot straight away
+ENDTEXT
+#
+LABEL easyhotspot
+MENU LABEL easyhotspot
+KERNEL easyhotspot/vmlinuz
+APPEND boot=casper netboot=nfs nfsroot=192.168.5.1:/srv/install/easyhotspot initrd=easyhotspot/initrd.gz
+TEXT HELP
+Boot Easyhotspot 0.2 beta
+ENDTEXT
+# GParted Live
+label gpartedlive
+MENU LABEL GParted Live
+kernel gpartedlive/vmlinuz
+append initrd=gpartedlive/initrd.img boot=live config union=aufs noswap noprompt vga=788 fetch=http://192.168.5.1/filesystem.squashfs
+TEXT HELP
+GParted Live - requires HTTP server
+ENDTEXT
+#
+label puppylinux
+MENU LABEL puppylinux
+kernel puppy/vmlinuz
+append initrd=puppy/newinitrd.gz
+TEXT HELP
+Puppy Linux 5.6
+ENDTEXT
+#--
+prompt 0
+timeout 0

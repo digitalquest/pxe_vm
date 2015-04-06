@@ -1,0 +1,22 @@
+DEFAULT vesamenu.c32 
+TIMEOUT 0
+#ONTIMEOUT opensuse
+PROMPT 0
+MENU INCLUDE pxelinux.cfg/pxe.conf
+#NOESCAPE 1
+LABEL bootLocal
+        localboot 0
+        TEXT HELP
+        Boot to local hard disk
+        ENDTEXT
+MENU BEGIN Xenserver
+MENU TITLE Xenserver
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE xenserver/xenserver.menu
+MENU END

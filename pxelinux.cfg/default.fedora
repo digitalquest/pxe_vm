@@ -1,0 +1,17 @@
+MENU INCLUDE boot.txt
+DEFAULT fed net
+
+LABEL fed net
+kernel fedora/18/i386/vmlinuz
+append initrd=fedora/18/i386/initrd.img inst.repo=http://mirror.bytemark.co.uk/fedora/linux/pub/fedora/linux/releases/18/Fedora/i386/os
+
+LABEL fed nfs
+kernel fedora/18/i386/vmlinuz
+append method=nfs:192.168.5.1:/srv/install/fedora/18/i386/ lang=us keymap=us ip=dhcp ksdevice=eth0 noipv6 initrd=fedora/18/i386/initrd.img noapic acpi=off
+
+LABEL fed http
+kernel fedora/18/i386/vmlinuz
+append initrd=fedora/18/i386/initrd.img inst.repo=http://192.168.5.1/srv/install/fedora/18/i386/ lang=us keymap=us ip=dhcp ksdevice=eth0 noipv6 noapic acpi=off
+
+PROMPT 0 
+TIMEOUT 150

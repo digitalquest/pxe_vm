@@ -1,0 +1,176 @@
+DEFAULT vesamenu.c32 
+TIMEOUT 0
+#ONTIMEOUT opensuse
+PROMPT 0
+MENU INCLUDE pxelinux.cfg/pxe.conf
+#NOESCAPE 1
+LABEL bootLocal
+        localboot 0
+        TEXT HELP
+        Boot to local hard disk
+        ENDTEXT
+MENU BEGIN freebsd
+MENU TITLE freebsd
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE freebsd/freebsd.menu
+MENU END
+MENU BEGIN ALTlinux
+MENU TITLE ALTlinux
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE altlinux/altlinux.menu
+MENU END
+MENU BEGIN Xenserver
+MENU TITLE Xenserver
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE xenserver/xenserver.menu
+MENU END
+MENU BEGIN Fedora
+MENU TITLE Fedora 
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE fedora/fedora.menu
+MENU END
+MENU BEGIN Zorin
+MENU TITLE Zorin 
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE zorin/zorin.menu
+MENU END
+MENU BEGIN OpenSuse Live
+MENU TITLE OpenSuse Live 
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE opensuselive/opensuselive.menu
+MENU END
+MENU BEGIN OpenSuse Rescue
+MENU TITLE OpenSuse Rescue 
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE opensuserescue/opensuserescue.menu
+MENU END
+MENU BEGIN OpenSuse
+MENU TITLE OpenSuse 
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE opensuse/opensuse.menu
+MENU END
+MENU BEGIN CentOS
+MENU TITLE CentOS 
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE centos/centos.menu
+MENU END
+MENU BEGIN Lubuntu
+MENU TITLE Lubuntu 
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE lubuntu/lubuntu.menu
+MENU END
+MENU BEGIN Ubuntu
+MENU TITLE Ubuntu 
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE ubuntu/ubuntu.menu
+MENU END
+MENU BEGIN Tools
+MENU TITLE Tools
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE gparted/gparted.menu
+MENU END
+MENU BEGIN EasyHotspot
+MENU TITLE EasyHotspot
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE easyhotspot/easyhotspot.menu
+MENU END
+MENU BEGIN Plop boot manager
+MENU TITLE Plop boot manager
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE ploplinux/ploplinux.menu
+MENU END
+MENU BEGIN WinXP
+MENU TITLE WinXP
+        LABEL Previous
+        MENU LABEL Previous Menu
+        TEXT HELP
+        Return to previous menu
+        ENDTEXT
+        MENU EXIT
+        MENU SEPARATOR
+        MENU INCLUDE winxp/winxp.menu
+MENU END

@@ -1,0 +1,92 @@
+default vesamenu.c32
+#Menu Background splash.png
+Menu Title Boot Menu
+# Ubuntu
+LABEL Ubuntu
+MENU LABEL Ubuntu
+KERNEL vesamenu.c32
+APPEND pxelinux.cfg/ubuntu
+#
+# Debian
+LABEL Debian
+MENU LABEL Debian
+KERNEL vesamenu.c32
+APPEND pxelinux.cfg/debian
+#
+# Slackware
+LABEL Slackware
+MENU LABEL Slackware
+KERNEL vesamenu.c32
+APPEND pxelinux.cfg/slackware
+#
+# Fedora
+LABEL Fedora (17)
+MENU LABEL Fedora (17)
+KERNEL fedora/17/i386/vmlinuz
+APPEND initrd=fedora/17/i386/initrd.img
+#
+# CentOS
+LABEL CentOS (5.8)
+MENU LABEL CentOS (5.8)
+KERNEL centos/5.8/i386/vmlinuz
+APPEND initrd=centos/5.8/i386/initrd.img
+#
+# Mandriva
+LABEL Mandriva (2010.2)
+MENU LABEL Mandriva (2010.2)
+KERNEL mandriva/2010.2/i386/vmlinuz
+APPEND  initrd=mandriva/2010.2/i386/all.rdz vga=788 splash=silent automatic=method:http,network:dhcp,server:www.gtlib.gatech.edu,directory:/pub/mandrake/official/2010.0/i586
+#
+# Suse
+LABEL Suse (12.2)
+MENU LABEL Suse (12.2)
+KERNEL suse/12.2/i386/linux
+APPEND initrd=suse/12.2/i386/initrd splash=silent showopts install=http://download.opensuse.org/distribution/12.2/repo/oss/
+#
+# Hardware Detection Tool 
+LABEL Hardware Detection Tool
+MENU LABEL Hardware Detection Tool
+KERNEL memdisk
+APPEND initrd=hdt/hdt.img
+#
+MENU SEPARATOR
+# DBAN
+label DBAN
+MENU LABEL DBAN
+kernel utilities/dban/2.2.7/i586/dban.bzi
+append nuke="dwipe --method dodshort --autonuke" silent floppy=0,16,cmos
+TEXT HELP
+Warning - This will erase your hard drice
+ENDTEXT
+#
+LABEL easyhotspot
+MENU LABEL easyhotspot
+KERNEL easyhotspot/vmlinuz
+APPEND boot=casper netboot=nfs nfsroot=192.168.5.1:/srv/install/easyhotspot initrd=easyhotspot/initrd.lz
+TEXT HELP
+Boot Easyhotspot 0.2 beta
+ENDTEXT
+#-- lubuntu 13.04 nfs
+LABEL lubuntu 13.04
+MENU LABEL lubuntu 13.04
+KERNEL lubuntu/13.04/i386/vmlinuz
+APPEND root=/dev/nfs boot=casper netboot=nfs nfsroot=192.168.5.1:/srv/install/lubuntu/13.04 initrd=lubuntu/13.04/i386/initrd.lz quiet splash --
+TEXT HELP
+Lubuntu 13.04 from local server via nfs
+ENDTEXT
+#
+# Boot plop boot manager from NFS - ISO
+
+label ploplinux-nfs-iso
+    menu label Plop Linux - NFS ISO
+    kernel ploplinux/syslinux/kernel/bzImage
+    append initrd=ploplinux/syslinux/kernel/initramfs.gz vga=1 nfsmount=192.168.5.1:/srv/install/tftpboot/ploplinux iso_filename=ploplinux.iso
+
+
+label ploplinuxfb-nfs-iso
+    menu label Plop Linux framebuffer mode - NFS ISO
+    kernel ploplinux/syslinux/kernel/bzImage
+    append initrd=ploplinux/syslinux/kernel/initramfs.gz vga=0x317 nfsmount=192.168.5.1:/srv/install/tftpboot/ploplinux iso_filename=ploplinux.iso
+#--
+prompt 0
+timeout 0

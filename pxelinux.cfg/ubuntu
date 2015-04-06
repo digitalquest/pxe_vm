@@ -1,0 +1,23 @@
+default vesamenu.c32
+Menu Background splash.png
+Menu Title Boot Menu
+# Ubuntu Stable
+LABEL Ubuntu Stable (natty)
+MENU LABEL Ubuntu Stable (natty)
+KERNEL vesamenu.c32
+APPEND ubuntu/natty/i386/boot-screens/menu.cfg
+#
+# Ubuntu Testing
+LABEL Ubuntu Testing (precise)
+MENU LABEL Ubuntu Testing (precise)
+KERNEL vesamenu.c32
+APPEND ubuntu/precise/i386/boot-screens/menu.cfg
+#
+# BACK
+LABEL Main Menu
+MENU LABEL Main Menu
+KERNEL vesamenu.c32
+APPEND pxelinux.cfg/default
+#
+prompt 0
+timeout 0

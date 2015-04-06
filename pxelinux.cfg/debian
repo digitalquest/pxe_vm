@@ -1,0 +1,29 @@
+default vesamenu.c32
+Menu Background splash.png
+Menu Title Boot Menu
+# Debian Stable
+LABEL Debian Stable (squeeze)
+MENU LABEL Debian Stable (squeeze)
+KERNEL vesamenu.c32
+APPEND debian/squeeze/i386/boot-screens/menu.cfg
+#
+# Debian UnStable
+LABEL Debian UnStable (sid)
+MENU LABEL Debian UnStable (sid)
+KERNEL vesamenu.c32
+APPEND debian/sid/i386/boot-screens/menu.cfg
+#
+# Debian Testing
+LABEL Debian Testing (wheezy)
+MENU LABEL Debian Testing (wheezy)
+KERNEL vesamenu.c32
+APPEND debian/wheezy/i386/boot-screens/menu.cfg
+#
+# BACK
+LABEL Main Menu
+MENU LABEL Main Menu
+KERNEL vesamenu.c32
+APPEND pxelinux.cfg/default
+#
+prompt 0
+timeout 0

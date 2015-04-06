@@ -1,0 +1,16 @@
+# D-I config version 2.0
+#include debian/squeeze/i386/boot-screens/mymenu.cfg
+#default debian/squeeze/i386/boot-screens/vesamenu.c32
+# D-I config version 2.0
+default install
+
+LABEL install
+MENU LABEL install
+kernel utilities/dban/2.2.7/i586/dban.bzi
+append nuke="dwipe --method dodshort --autonuke" silent floppy=0,16,cmos
+TEXT HELP
+Warning - This will erase your hard drice
+ENDTEXT
+
+prompt 0
+timeout 10

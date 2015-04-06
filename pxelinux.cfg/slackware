@@ -1,0 +1,22 @@
+default vesamenu.c32
+Menu Background splash.png
+Menu Title Boot Menu
+# Slackware 
+LABEL Slackware (14.0) i486
+MENU LABEL Slackware (14.0) i486
+KERNEL slackware/14.0/bzImage_huge
+APPEND initrd=slackware/14.0/initrd.img load_ramdisk=1 prompt_ramdisk=0 rw SLACK_KERNEL=huge.s
+#
+LABEL Slackware (14.0) PentiumPro minimum
+MENU LABEL Slackware (14.0) PentiumPro minimum
+KERNEL slackware/14.0/bzImage_hugesmp
+APPEND initrd=slackware/14.0/initrd.img load_ramdisk=1 prompt_ramdisk=0 rw SLACK_KERNEL=hugesmp.s
+#
+# BACK
+LABEL Main Menu
+MENU LABEL Main Menu
+KERNEL vesamenu.c32
+APPEND pxelinux.cfg/default
+#
+prompt 0
+timeout 0
